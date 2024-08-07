@@ -76,6 +76,7 @@ shopify_mock_data = {
   ]
 }
 
+# function to convert values of dict to lowercase
 def update_to_lowercase(data):
     for key, value in data.items():
         if isinstance(value, dict):
