@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "1c0ddf96-fc87-41dc-bc9c-07d8973df165",
+		"name": "fetch_data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37039695"
+	},
+	"item": [
+		{
+			"name": "fetch data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:8080/fetch-data",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"fetch-data"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "fetch data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/fetch-data",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"fetch-data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.3 Python/3.10.12"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Aug 2024 11:15:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1611"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"customers\": [\n            {\n                \"addresses\": [\n                    {\n                        \"address1\": \"123 Main St\",\n                        \"city\": \"Anytown\",\n                        \"country\": \"USA\",\n                        \"id\": 1,\n                        \"province\": \"CA\",\n                        \"zip\": \"12345\"\n                    }\n                ],\n                \"email\": \"johndoe@example.com\",\n                \"first_name\": \"John\",\n                \"id\": 1,\n                \"last_name\": \"Doe\",\n                \"phone\": \"123-456-7890\"\n            }\n        ],\n        \"orders\": [\n            {\n                \"customer_id\": 1,\n                \"id\": 1,\n                \"line_items\": [\n                    {\n                        \"id\": 1,\n                        \"price\": 19.99,\n                        \"product_id\": 1,\n                        \"quantity\": 1\n                    }\n                ],\n                \"order_date\": \"2022-01-01\",\n                \"total\": 19.99\n            }\n        ],\n        \"products\": [\n            {\n                \"description\": \"This is a description of Product 1\",\n                \"id\": 1,\n                \"price\": 19.99,\n                \"title\": \"Product 1\",\n                \"variants\": [\n                    {\n                        \"id\": 1,\n                        \"inventory_quantity\": 10,\n                        \"price\": 19.99,\n                        \"sku\": \"PROD1-VAR1\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"inventory_quantity\": 5,\n                        \"price\": 24.99,\n                        \"sku\": \"PROD1-VAR2\"\n                    }\n                ]\n            },\n            {\n                \"description\": \"This is a description of Product 2\",\n                \"id\": 2,\n                \"price\": 9.99,\n                \"title\": \"Product 2\",\n                \"variants\": [\n                    {\n                        \"id\": 3,\n                        \"inventory_quantity\": 15,\n                        \"price\": 9.99,\n                        \"sku\": \"PROD2-VAR1\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"message\": \"successfully fetched shopify data\"\n}"
+				}
+			]
+		},
+		{
+			"name": "fetch processed data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"customers\": [\n            {\n                \"addresses\": [\n                    {\n                        \"address1\": \"123 Main St\",\n                        \"city\": \"Anytown\",\n                        \"country\": \"USA\",\n                        \"id\": 1,\n                        \"province\": \"CA\",\n                        \"zip\": \"12345\"\n                    }\n                ],\n                \"email\": \"johndoe@example.com\",\n                \"first_name\": \"John\",\n                \"id\": 1,\n                \"last_name\": \"Doe\",\n                \"phone\": \"123-456-7890\"\n            }\n        ],\n        \"orders\": [\n            {\n                \"customer_id\": 1,\n                \"id\": 1,\n                \"line_items\": [\n                    {\n                        \"id\": 1,\n                        \"price\": 19.99,\n                        \"product_id\": 1,\n                        \"quantity\": 1\n                    }\n                ],\n                \"order_date\": \"2022-01-01\",\n                \"total\": 19.99\n            }\n        ],\n        \"products\": [\n            {\n                \"description\": \"This is a description of Product 1\",\n                \"id\": 1,\n                \"price\": 19.99,\n                \"title\": \"Product 1\",\n                \"variants\": [\n                    {\n                        \"id\": 1,\n                        \"inventory_quantity\": 10,\n                        \"price\": 19.99,\n                        \"sku\": \"PROD1-VAR1\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"inventory_quantity\": 5,\n                        \"price\": 24.99,\n                        \"sku\": \"PROD1-VAR2\"\n                    }\n                ]\n            },\n            {\n                \"description\": \"This is a description of Product 2\",\n                \"id\": 2,\n                \"price\": 9.99,\n                \"title\": \"Product 2\",\n                \"variants\": [\n                    {\n                        \"id\": 3,\n                        \"inventory_quantity\": 15,\n                        \"price\": 9.99,\n                        \"sku\": \"PROD2-VAR1\"\n                    }\n                ]\n            }\n        ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8080/get-processed-data",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"get-processed-data"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "fetch processed data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"customers\": [\n            {\n                \"addresses\": [\n                    {\n                        \"address1\": \"123 Main St\",\n                        \"city\": \"Anytown\",\n                        \"country\": \"USA\",\n                        \"id\": 1,\n                        \"province\": \"CA\",\n                        \"zip\": \"12345\"\n                    }\n                ],\n                \"email\": \"johndoe@example.com\",\n                \"first_name\": \"John\",\n                \"id\": 1,\n                \"last_name\": \"Doe\",\n                \"phone\": \"123-456-7890\"\n            }\n        ],\n        \"orders\": [\n            {\n                \"customer_id\": 1,\n                \"id\": 1,\n                \"line_items\": [\n                    {\n                        \"id\": 1,\n                        \"price\": 19.99,\n                        \"product_id\": 1,\n                        \"quantity\": 1\n                    }\n                ],\n                \"order_date\": \"2022-01-01\",\n                \"total\": 19.99\n            }\n        ],\n        \"products\": [\n            {\n                \"description\": \"This is a description of Product 1\",\n                \"id\": 1,\n                \"price\": 19.99,\n                \"title\": \"Product 1\",\n                \"variants\": [\n                    {\n                        \"id\": 1,\n                        \"inventory_quantity\": 10,\n                        \"price\": 19.99,\n                        \"sku\": \"PROD1-VAR1\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"inventory_quantity\": 5,\n                        \"price\": 24.99,\n                        \"sku\": \"PROD1-VAR2\"\n                    }\n                ]\n            },\n            {\n                \"description\": \"This is a description of Product 2\",\n                \"id\": 2,\n                \"price\": 9.99,\n                \"title\": \"Product 2\",\n                \"variants\": [\n                    {\n                        \"id\": 3,\n                        \"inventory_quantity\": 15,\n                        \"price\": 9.99,\n                        \"sku\": \"PROD2-VAR1\"\n                    }\n                ]\n            }\n        ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/get-processed-data",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"get-processed-data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Aug 2024 12:11:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "848"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"customers\": [\n            {\n                \"addresses\": [\n                    {\n                        \"address1\": \"123 main st\",\n                        \"city\": \"anytown\",\n                        \"country\": \"usa\",\n                        \"id\": 1,\n                        \"province\": \"ca\",\n                        \"zip\": \"12345\"\n                    }\n                ],\n                \"email\": \"johndoe@example.com\",\n                \"first_name\": \"john\",\n                \"id\": 1,\n                \"last_name\": \"doe\",\n                \"phone\": \"123-456-7890\"\n            }\n        ],\n        \"orders\": [\n            {\n                \"customer_id\": 1,\n                \"id\": 1,\n                \"line_items\": [\n                    {\n                        \"id\": 1,\n                        \"price\": 19.99,\n                        \"product_id\": 1,\n                        \"quantity\": 1\n                    }\n                ],\n                \"order_date\": \"2022-01-01\",\n                \"total\": 19.99\n            }\n        ],\n        \"products\": [\n            {\n                \"description\": \"this is a description of product 1\",\n                \"id\": 1,\n                \"price\": 19.99,\n                \"title\": \"product 1\",\n                \"variants\": [\n                    {\n                        \"id\": 1,\n                        \"inventory_quantity\": 10,\n                        \"price\": 19.99,\n                        \"sku\": \"prod1-var1\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"inventory_quantity\": 5,\n                        \"price\": 24.99,\n                        \"sku\": \"prod1-var2\"\n                    }\n                ]\n            },\n            {\n                \"description\": \"this is a description of product 2\",\n                \"id\": 2,\n                \"price\": 9.99,\n                \"title\": \"product 2\",\n                \"variants\": [\n                    {\n                        \"id\": 3,\n                        \"inventory_quantity\": 15,\n                        \"price\": 9.99,\n                        \"sku\": \"prod2-var1\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"message\": \"successfully fetched processed data\"\n}"
+				}
+			]
+		}
+	]
+}
