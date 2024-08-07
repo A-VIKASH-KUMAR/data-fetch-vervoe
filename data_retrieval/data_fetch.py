@@ -87,7 +87,7 @@ def update_to_lowercase(data):
     return data
 
 
-
+# endpoint to fetch dummy shopify data
 @data_fetch.route("/fetch-data", methods=["GET"])
 def fetch_data():
   try:
@@ -97,6 +97,7 @@ def fetch_data():
   except Exception as error:
     print("error occoured to fetch data")
 
+# function to get processed data after converting all values to lowercase
 @data_fetch.route("/get-processed-data", methods = ["POST"])
 def fetch_processsed_data():
    try:
