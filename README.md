@@ -1,5 +1,5 @@
 # Data-fetch
-## start the app using the following commands using flask command
+## Start the app using the following commands using flask command
 1) Install virtual env using the command 
     $ python3 -m venv .venv
 2) Activate the virtual env using the command
@@ -13,7 +13,7 @@
     -  http://127.0.0.1:5000/fetch-data -> to get the shopify mock data
     -  http://127.0.0.1:5000/get-processed-data - pass the data from above response and pass it as body in the second endpoint to get the values of the json in lowercase
 
-## using docker container
+## Using docker container
 1) Build the docker container with the following command
     $ sudo docker build . -t data
 2) Run the docker container with the following command to hit the endpoints using the app running inside container
